@@ -407,7 +407,7 @@ public class pelanggan extends javax.swing.JFrame {
         }
         int totall = 0;
         totall = Integer.parseInt(String.valueOf(jumlah.getText()));
-        int total = (int) ((totall * 10000) + harga_cucian);
+        int total = (int) ((harga_cucian * totall));
         tottal.setText(String.valueOf(total));
     }//GEN-LAST:event_bthitungActionPerformed
 

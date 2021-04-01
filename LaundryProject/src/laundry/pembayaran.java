@@ -514,7 +514,6 @@ java.util.Date tglsekarang = new java.util.Date();
                         e.printStackTrace();
                 }
         }
-                reset();
             }else{
                 JOptionPane.showMessageDialog(null, "gagal simpan");
             }
