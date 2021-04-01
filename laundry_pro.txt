@@ -1,0 +1,61 @@
+cd\
+cd xampp\mysql\bin
+mysqld.exe
+mysql -u root
+CREATE DATABASE laundry_pro;
+use laundry_pro;
+
+--------BUAT TABLE LOGIN-------
+CREATE TABLE `tbl_login` (
+  `user` varchar(20) NOT NULL,
+  `pass` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+//Dumping data
+INSERT INTO `tbl_login` (`user`, `pass`) VALUES
+('tari', '1234');
+
+--------BUAT TABLE AMBIL-------
+CREATE TABLE `tbl_ambil` (
+  `no_antrian` int(11) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `no_telp` varchar(13) NOT NULL,
+  `alamat` varchar(50) NOT NULL,
+  `j_cucian` varchar(10) NOT NULL,
+  `jumlah` int(11) NOT NULL,
+  `harga` int(11) NOT NULL,
+  `tanggal` date NOT NULL,
+  `total` int(11) NOT NULL,
+  `bayar` int(11) NOT NULL,
+  `kembali` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+//Dumping data
+INSERT INTO `tbl_ambil` (`no_antrian`, `nama`, `no_telp`, `alamat`, `j_cucian`, `jumlah`, `harga`, `tanggal`, `total`, `bayar`, `kembali`) VALUES
+(1, 'Mila', '087770432050', 'Kalideres', 'Reguler', 1, 7000, '2021-03-30', 7000, 10000, 3000);
+
+--------BUAT TABLE PESAN-------
+CREATE TABLE `tbl_pesan` (
+  `no_antrian` int(11) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `no_telp` varchar(13) NOT NULL,
+  `alamat` text NOT NULL,
+  `j_cucian` varchar(5) NOT NULL,
+  `jumlah` int(11) NOT NULL,
+  `harga` int(11) NOT NULL,
+  `tanggal` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+//Dumping data
+INSERT INTO `tbl_pesan` (`no_antrian`, `nama`, `no_telp`, `alamat`, `j_cucian`, `jumlah`, `harga`, `tanggal`) VALUES
+(2, 'anis', '08557076719', 'Kalideres', 'Express', 5, 50000, '2021-03-31'),
+(3, 'nateu', '087870037257', 'Kojan, 'Reguler', 2, 14000, '2021-03-31'),
+(4, 'desti', '089605612', 'Kalideres', 'Reguler', 6, 42000, '2021-03-31'),
+(5, 'ika', '085692170696', 'Kojan', 'Express', 1, 10000, '2021-03-31');
+
+----------
+ALTER TABLE `tbl_pesan` ADD PRIMARY KEY (`no_antrian`);
+
+ALTER TABLE `tbl_pesan` MODIFY `no_antrian` int(11) NOT NULL AUTO_INCREMENT;
+----------
+SHOW TABLES;
